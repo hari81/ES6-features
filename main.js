@@ -57,6 +57,44 @@ var [firs,,,,last] = cities;
 
 console.log(firs);
 console.log(last);
-var vaction = {
 
+var sandwich = {
+  title: 'Reuben',
+  price: 7,
+  description: "Cleveland's favorite sandwich",
+  ingredients:  ['bread', 'corned beef', 'dressing', 'cheese']
 }
+
+var {title, price} = sandwich;
+
+console.log(title);
+console.log(price);
+
+var vaction = {
+  destination: 'chile',
+  travlers: 2,
+  activity: 'skiing',
+  cost: 4000
+};
+
+function vactionMarketing({destination, activity}) {
+  return `Come to ${destination} and do some ${activity}`;
+}
+
+console.log(vactionMarketing(vaction));
+
+//Generators
+
+function* director() {
+  yield "Three";
+  yield "Two";
+  yield "Three";
+  yield "Action";
+}
+var action = director();
+
+console.log(action.next());
+console.log(action.next());
+console.log(action.next());
+console.log(action.next());
+console.log(action.next());
